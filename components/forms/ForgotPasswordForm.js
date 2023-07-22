@@ -1,4 +1,11 @@
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  Button,
+} from 'react-native';
 import React from 'react';
 import * as Yup from 'yup';
 import {Formik} from 'formik';
@@ -17,7 +24,7 @@ const ForgotPasswordForm = ({navigation}) => {
         initialValues={{email: ''}}
         onSubmit={values => {
           console.log('post submitted', values);
-          //   navigation.goBack();
+          navigation.navigate('VerifyOtp', {page: 'ForgotPassword'});
         }}
         validationSchema={ForgotPasswordFormSchema}
         validateOnMount={true}>

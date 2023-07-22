@@ -12,7 +12,9 @@ const ButtonField = ({
 }) => {
   return (
     <Pressable
-      onPress={e => console.log('e')}
+      onPress={e => {
+        handleButtonPress();
+      }}
       style={({pressed}) => [
         {
           backgroundColor: pressed ? '#003E6C' : '#005DA0',
