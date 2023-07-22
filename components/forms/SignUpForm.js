@@ -113,9 +113,9 @@ const SignUpForm = ({navigation}) => {
 
             <View style={{marginTop: 'auto', marginBottom: 30}}>
               <ButtonField
-                accessibilityLabel={'sign in'}
+                accessibilityLabel={'Sign up'}
                 handleButtonPress={handleSubmit}
-                title={'Sign In'}
+                title={'Sign up'}
               />
             </View>
           </>
