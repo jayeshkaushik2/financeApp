@@ -1,5 +1,8 @@
 import React from 'react';
 import {StyleSheet, Button, Pressable, Text} from 'react-native';
+import Icon from 'react-native-vector-icons/AntDesign';
+
+const RightArrowIcon = <Icon name="arrowright" size={30} color="white" />;
 
 const ButtonField = ({
   handleButtonPress,

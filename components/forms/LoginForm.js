@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import * as Yup from 'yup';
 import {Formik} from 'formik';
@@ -56,8 +56,25 @@ const LoginForm = ({navigation}) => {
                 Sign in with social
               </Text>
               <View style={styles.social_sub_container}>
-                <Text>Google</Text>
-                <Text>Facebook</Text>
+                <View>
+                  <TouchableOpacity>
+                    <Image
+                      style={styles.icon}
+                      source={require('../../assets/icons/google.png')}
+                    />
+                    <Text style={styles.iconText}>Google</Text>
+                  </TouchableOpacity>
+                </View>
+
+                <View>
+                  <TouchableOpacity>
+                    <Image
+                      style={styles.icon}
+                      source={require('../../assets/icons/facebook.png')}
+                    />
+                    <Text style={styles.iconText}>Facebook</Text>
+                  </TouchableOpacity>
+                </View>
               </View>
             </View>
 
@@ -91,6 +108,8 @@ const styles = StyleSheet.create({
   wrapper: {marginTop: 'auto'},
   InputFieldContainer: {
     padding: 10,
+    paddingTop: 0,
+    marginBottom: 20,
   },
   inputField: isValid => ({
     borderRadius: 4,
@@ -107,13 +126,14 @@ const styles = StyleSheet.create({
   social_containerText: {
     color: 'gray',
     fontWeight: '500',
+    marginBottom: 10,
   },
   social_sub_container: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    width: '100%',
+    justifyContent: 'space-between',
+    width: '45%',
+    marginBottom: 45,
   },
-
   SigupContainer: {
     flexDirection: 'row',
     width: '100%',
@@ -123,12 +143,26 @@ const styles = StyleSheet.create({
   sub_container: {
     justifyContent: 'space-between',
     flexDirection: 'row',
-    marginBottom: 10,
+    marginBottom: 20,
     padding: 10,
   },
   sub_containerText: {
     color: 'black',
     fontWeight: '500',
+  },
+  icon: {
+    width: 40,
+    height: 40,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+  iconText: {
+    color: 'gray',
+  },
+  finance_text: {
+    fontSize: 32,
+    color: 'black',
+    fontWeight: 'bold',
   },
 });
 

@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ECECEC',
     padding: 10,
     height: 60,
-    marginBottom: 10,
+    marginBottom: 20,
     fontSize: 16,
   },
 });
