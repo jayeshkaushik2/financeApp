@@ -92,7 +92,7 @@ styles = StyleSheet.create({
     marginTop: 'auto',
     flexDirection: 'row',
     height: 70,
-    borderTopColor: 'black',
+    borderTopColor: 'gray',
     borderTopWidth: 1,
     justifyContent: 'space-evenly',
     paddingTop: 10,
