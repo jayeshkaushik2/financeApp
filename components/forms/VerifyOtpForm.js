@@ -40,7 +40,7 @@ const VerifyOtpForm = ({route, navigation}) => {
               <Text
                 style={{
                   fontWeight: 'bold',
-                  fontSize: 16,
+                  fontSize: 15,
                   color: '#484848',
                   marginLeft: 20,
                   marginBottom: 25,

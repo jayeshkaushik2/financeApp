@@ -12,10 +12,10 @@ const SignUpForm = ({navigation}) => {
     username: Yup.string().email().required('A Username is required'),
     password: Yup.string()
       .required()
-      .min(6, 'Your password has to have at least 8 characters'),
+      .min(6, 'Your password has to have at least 6 characters'),
     confirm_password: Yup.string()
       .required()
-      .min(6, 'Your password has to have at least 8 characters'),
+      .min(6, 'Your password has to have at least 6 characters'),
   });
 
   return (
