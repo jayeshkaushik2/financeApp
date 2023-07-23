@@ -72,7 +72,7 @@ const ProfileForm = ({navigation}) => {
               />
               <ButtonFloatField
                 accessibilityLabel={'Logout'}
-                handleButtonPress={handleSubmit}
+                handleButtonPress={() => navigation.navigate('Login')}
                 title={'Logout'}
                 width="90%"
                 buttonType="error"

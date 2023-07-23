@@ -37,7 +37,7 @@ const LoginForm = ({navigation}) => {
               <InputField
                 placeholder="Email"
                 keyboardType="email-address"
-                autoFocus={true}
+                autoFocus={false}
                 onChangeText={handleChange('email')}
                 onBlur={handleBlur('email')}
                 value={values?.email}
