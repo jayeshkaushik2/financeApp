@@ -12,6 +12,7 @@ import {Formik} from 'formik';
 // import * as Validator from 'email-validator';
 import InputField from '../InputField';
 import ButtonField from '../ButtonField';
+import ButtonFloatField from '../ButtonFloatField';
 
 const ProfileForm = ({navigation}) => {
   const ProfileFormSchema = Yup.object().shape({
@@ -27,7 +28,7 @@ const ProfileForm = ({navigation}) => {
         }}
         onSubmit={values => {
           console.log('post submitted', values);
-          navigation.navigate('VerifyOtp', {page: 'ForgotPassword'});
+          // navigation.navigate('VerifyOtp', {page: 'ForgotPassword'});
         }}
         validationSchema={ProfileFormSchema}
         validateOnMount={true}>
@@ -57,13 +58,26 @@ const ProfileForm = ({navigation}) => {
                 value={values?.email}
               />
             </View>
-            {/* <View>
-              <ButtonField
-                accessibilityLabel={'Send OTP'}
+            <View
+              style={{
+                alignItems: 'center',
+                marginTop: 30,
+              }}>
+              <ButtonFloatField
+                accessibilityLabel={'Edit profile'}
                 handleButtonPress={handleSubmit}
-                title={'Send OTP'}
+                title={'Edit profile'}
+                width="90%"
+                buttonType="normal"
               />
-            </View> */}
+              <ButtonFloatField
+                accessibilityLabel={'Logout'}
+                handleButtonPress={handleSubmit}
+                title={'Logout'}
+                width="90%"
+                buttonType="error"
+              />
+            </View>
           </>
         )}
       </Formik>
