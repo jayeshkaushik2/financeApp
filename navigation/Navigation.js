@@ -8,6 +8,7 @@ import ForgotPassword from '../screens/authentication/ForgotPassword';
 import VerifyOtp from '../screens/authentication/VerifyOtp';
 import NewPassword from '../screens/authentication/NewPassword';
 import Home from '../screens/Home';
+import Profile from '../screens/Profile';
 
 // Import your screens/components
 
@@ -16,7 +17,7 @@ const Stack = createNativeStackNavigator();
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="Profile">
         {/* authentication pages starts */}
         <Stack.Screen
           name="Login"
@@ -48,6 +49,11 @@ const Navigation = () => {
         <Stack.Screen
           name="Home"
           component={Home}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={Profile}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
