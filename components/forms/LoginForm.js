@@ -20,7 +20,7 @@ const LoginForm = ({navigation}) => {
         initialValues={{email: '', password: ''}}
         onSubmit={values => {
           console.log('post submitted', values);
-          //   navigation.goBack();
+          navigation.navigate('Home');
         }}
         validationSchema={LoginFormSchema}
         validateOnMount={true}>
