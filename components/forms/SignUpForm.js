@@ -106,7 +106,7 @@ const SignUpForm = ({navigation}) => {
               id="new-account-or-forgot-password">
               <TouchableOpacity onPress={() => navigation.push('Login')}>
                 <Text style={styles.sub_containerText}>
-                  Already have an Account?
+                  Already have an Account ?
                 </Text>
               </TouchableOpacity>
             </View>

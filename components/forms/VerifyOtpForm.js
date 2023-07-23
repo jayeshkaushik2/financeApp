@@ -55,6 +55,13 @@ const VerifyOtpForm = ({route, navigation}) => {
                 value={values?.otp}
               />
             </View>
+            <View
+              style={styles.sub_container}
+              id="new-account-or-forgot-password">
+              <TouchableOpacity onPress={() => navigation.push('Login')}>
+                <Text style={styles.sub_containerText}>Rsend OTP ?</Text>
+              </TouchableOpacity>
+            </View>
             <View style={{marginTop: 'auto', marginBottom: 100}}>
               <ButtonField
                 accessibilityLabel={'Verify OTP'}
@@ -84,6 +91,16 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'gray',
   }),
+  sub_container: {
+    justifyContent: 'center',
+    flexDirection: 'row',
+    marginBottom: 20,
+    padding: 10,
+  },
+  sub_containerText: {
+    color: 'black',
+    fontWeight: '500',
+  },
 });
 
 export default VerifyOtpForm;
