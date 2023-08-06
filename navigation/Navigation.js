@@ -19,7 +19,7 @@ const Stack = createNativeStackNavigator();
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Income">
+      <Stack.Navigator initialRouteName="Home">
         {/* authentication pages starts */}
         <Stack.Screen
           name="Login"
