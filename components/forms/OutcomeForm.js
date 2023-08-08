@@ -16,8 +16,18 @@ const OutcomeForm = () => {
   const [activeCreationHeader, setActiveCreationHeader] = React.useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
-    {label: 'Apple', value: 'apple'},
-    {label: 'Banana', value: 'banana'},
+    {
+      id: 1,
+      label: 'Food & Drinks',
+      value: 'Food & Drinks',
+      image: 'https://cdn-icons-png.flaticon.com/512/5787/5787098.png',
+    },
+    {
+      id: 1,
+      label: 'Auto & Cab',
+      value: 'Auto & Cab',
+      image: 'https://cdn-icons-png.flaticon.com/512/7804/7804371.png',
+    },
   ]);
 
   return (

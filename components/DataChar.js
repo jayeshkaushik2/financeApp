@@ -27,7 +27,7 @@ const DataChar = ({data}) => {
         data={data}
         width={screenWidth - 50}
         height={250}
-        verticalLabelRotation={25}
+        verticalLabelRotation={0}
         chartConfig={chartConfig}
         bezier
         style={{
@@ -36,20 +36,20 @@ const DataChar = ({data}) => {
         }}
       />
       <View style={styles.income_container}>
-        <View>
+        <View style={{width: '50%'}}>
           <Text style={{fontSize: 20, fontWeight: 'bold', color: '#003E6C'}}>
             Income
           </Text>
           <Text style={{fontSize: 30, fontWeight: '400', color: '#00CB76'}}>
-            $ 2000
+            $ 30,000
           </Text>
         </View>
-        <View>
+        <View style={{width: '50%', paddingLeft: 30}}>
           <Text style={{fontSize: 20, fontWeight: 'bold', color: '#003E6C'}}>
             Outcome
           </Text>
           <Text style={{fontSize: 30, fontWeight: '400', color: '#CB0000'}}>
-            $ 350
+            $ 4,050
           </Text>
         </View>
       </View>
@@ -62,7 +62,7 @@ const chartConfig = {
   backgroundGradientFrom: '#F0F0F0',
   backgroundGradientTo: '#dbdbdb',
   decimalPlaces: 2,
-  color: (opacity = 1) => `rgba(255, 255, 255, ${0})`,
+  color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
   labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
   style: {
     borderRadius: 16,

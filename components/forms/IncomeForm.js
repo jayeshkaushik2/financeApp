@@ -16,8 +16,24 @@ const IncomeForm = () => {
   const [activeCreationHeader, setActiveCreationHeader] = React.useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
-    {label: 'Apple', value: 'apple'},
-    {label: 'Banana', value: 'banana'},
+    {
+      id: 1,
+      label: 'Income',
+      value: 'Income',
+      image: 'https://cdn-icons-png.flaticon.com/512/3135/3135679.png',
+    },
+    {
+      id: 1,
+      label: 'Stocks',
+      value: 'Stocks',
+      image: 'https://cdn-icons-png.flaticon.com/128/4256/4256900.png',
+    },
+    {
+      id: 1,
+      label: 'Ranting',
+      value: 'Ranting',
+      image: 'https://cdn-icons-png.flaticon.com/512/4503/4503988.png',
+    },
   ]);
 
   return (

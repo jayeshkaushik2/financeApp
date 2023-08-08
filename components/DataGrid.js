@@ -14,7 +14,7 @@ const DataGrid = ({data, keyType, showType}) => {
             justifyContent: 'center',
             marginTop: 10,
           }}>
-          <Text style={{color: '#858585', fontSize: 18, fontWeight: '600'}}>
+          <Text style={{color: '#858585', fontSize: 15, fontWeight: '600'}}>
             {today}
           </Text>
         </View>
@@ -27,7 +27,7 @@ const DataGrid = ({data, keyType, showType}) => {
             justifyContent: 'center',
             padding: 10,
           }}>
-          <Text style={{color: 'white', fontSize: 20, fontWeight: '600'}}>
+          <Text style={{color: 'white', fontSize: 18, fontWeight: '600'}}>
             $ {200.24}
           </Text>
         </View>
@@ -52,17 +52,17 @@ const DataGrid = ({data, keyType, showType}) => {
                 source={{uri: item?.image}}
               />
               <Text
-                style={{color: '#003E6C', fontSize: 22, fontWeight: 'bold'}}>
+                style={{color: '#003E6C', fontSize: 18, fontWeight: 'bold'}}>
                 {item[keyType]}
               </Text>
             </View>
             <Text
               style={{
                 color: `${showType === 'success' ? '#00CB76' : '#CB0000'}`,
-                fontSize: 22,
+                fontSize: 18,
                 fontWeight: 'bold',
               }}>
-              $ {item?.amount}
+              {showType === 'success' ? '' : '-'}$ {item?.amount}
             </Text>
           </View>
         ))}

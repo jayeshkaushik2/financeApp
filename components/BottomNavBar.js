@@ -94,8 +94,10 @@ styles = StyleSheet.create({
     height: 70,
     borderTopColor: 'gray',
     borderTopWidth: 1,
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
     paddingTop: 10,
+    paddingLeft: 30,
+    paddingRight: 30,
   },
   icon: {
     marginRight: 'auto',

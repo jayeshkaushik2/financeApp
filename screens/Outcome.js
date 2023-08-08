@@ -20,59 +20,15 @@ const Outcome = () => {
 let data = [
   {
     id: 1,
-    outcome_type: 'Income',
+    outcome_type: 'Food & Drinks',
     amount: 5,
-    image:
-      'https://compass1.org/wp-content/uploads/2011/06/shutterstock_144688553_clipped_rev_3.png',
+    image: 'https://cdn-icons-png.flaticon.com/512/5787/5787098.png',
   },
   {
     id: 1,
-    outcome_type: 'Stocks',
-    amount: 20,
-    image:
-      'https://compass1.org/wp-content/uploads/2011/06/shutterstock_144688553_clipped_rev_3.png',
-  },
-  {
-    id: 1,
-    outcome_type: 'Ranting',
-    amount: 10,
-    image:
-      'https://compass1.org/wp-content/uploads/2011/06/shutterstock_144688553_clipped_rev_3.png',
-  },
-  {
-    id: 1,
-    outcome_type: 'Stocks',
-    amount: 20,
-    image:
-      'https://compass1.org/wp-content/uploads/2011/06/shutterstock_144688553_clipped_rev_3.png',
-  },
-  {
-    id: 1,
-    outcome_type: 'Ranting',
-    amount: 10,
-    image:
-      'https://compass1.org/wp-content/uploads/2011/06/shutterstock_144688553_clipped_rev_3.png',
-  },
-  {
-    id: 1,
-    outcome_type: 'Stocks',
-    amount: 20,
-    image:
-      'https://compass1.org/wp-content/uploads/2011/06/shutterstock_144688553_clipped_rev_3.png',
-  },
-  {
-    id: 1,
-    outcome_type: 'Ranting',
-    amount: 10,
-    image:
-      'https://compass1.org/wp-content/uploads/2011/06/shutterstock_144688553_clipped_rev_3.png',
-  },
-  {
-    id: 1,
-    outcome_type: 'Stocks',
-    amount: 20,
-    image:
-      'https://compass1.org/wp-content/uploads/2011/06/shutterstock_144688553_clipped_rev_3.png',
+    outcome_type: 'Auto & Cab',
+    amount: 30,
+    image: 'https://cdn-icons-png.flaticon.com/512/7804/7804371.png',
   },
 ];
 
