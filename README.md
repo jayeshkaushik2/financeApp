@@ -1,79 +1,24 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+Mobile Application to manage your finance.
 
-# Getting Started
+"Introducing the ultimate companion for smart financial management — our innovative Mobile Application to Manage Your Finance. Take charge of your financial journey like never before with a powerful, user-friendly app that empowers you to achieve your financial goals, track expenses, and make informed decisions effortlessly.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+Experience the ease of managing your money on-the-go with our intuitive interface and robust features. Our app seamlessly syncs with your bank accounts, credit cards, and other financial sources, providing you with real-time insights into your financial health.
 
-## Step 1: Start the Metro Server
+Key Features:
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+Holistic Financial Overview: Get a comprehensive snapshot of your financial life in one place. See your account balances, investments, debts, and upcoming bills in a single, easily digestible dashboard.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+Expense Tracking: Say goodbye to manual expense tracking. Our app automatically categorizes your transactions, helping you understand where your money is going. Set budgets for different categories and receive notifications when you're approaching your limits.
 
-```bash
-# using npm
-npm start
+Budget Planning: Effortlessly create personalized budgets based on your income and financial goals. Our app provides actionable recommendations to help you save and spend wisely, ensuring you're always on track.
 
-# OR using Yarn
-yarn start
-```
+Goal Setting: Define your short-term and long-term financial goals, whether it's buying a home, paying off debt, or planning a dream vacation. Our app helps you stay motivated by tracking your progress and suggesting strategies to achieve your objectives.
 
-## Step 2: Start your Application
+Bill Management: Never miss a bill payment again. Our app sends reminders for upcoming bills and helps you organize due dates, ensuring your financial obligations are met promptly.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+Secure Transactions: Rest easy knowing your financial data is secure. We employ state-of-the-art encryption and security measures to protect your sensitive information.
 
-### For Android
+Investment Insights: Monitor your investments in real-time and receive personalized insights to optimize your portfolio. Stay informed about market trends and make informed decisions to grow your wealth.
 
-```bash
-# using npm
-npm run android
+Customizable Reports: Generate visual reports that illustrate your spending patterns, income sources, and financial progress. Analyze your data to identify areas where you can make improvements.
 
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
