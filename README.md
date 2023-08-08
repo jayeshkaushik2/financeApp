@@ -25,30 +25,39 @@ Experience the ease of managing your money on-the-go with our intuitive interfac
 **Authentication Screens:**
 
 - Sign up Screen
-  ![sign up](./app_screens/signup.jpeg)
+  <!-- ![Sign up](./app_screens/) -->
+  <img src="./app_screens/signup.jpeg" alt="Image Alt Text" width="300" />
 
 - Sign in Screen
-  ![sign up](./app_screens/login.jpeg)
+  <!-- ![Sign in](./app_screens/) -->
+  <img src="./app_screens/login.jpeg" alt="Image Alt Text" width="300" />
 
 - Forgot Password Screen
-  ![sign up](./app_screens/forgot%20password.jpeg)
+  <!-- ![Forgot Password](./app_screens/forgot%20password.jpeg) -->
+  <img src="./app_screens/forgot%20password.jpeg" alt="Image Alt Text" width="300" />
 
 - Verify OTP Screen
-  ![sign up](./app_screens/verifiy%20otp.jpeg)
+  <!-- ![Verify OTP](./app_screens/verifiy%20otp.jpeg) -->
+  <img src="./app_screens/verifiy%20otp.jpeg" alt="Image Alt Text" width="300" />
 
 - New Password Screen
-  ![sign up](./app_screens/update%20password.jpeg)
+  <!-- ![New Password](./app_screens/update%20password.jpeg) -->
+  <img src="./app_screens/update%20password.jpeg" alt="Image Alt Text" width="300" />
 
 **Authenticated Screens:**
 
 - Home Screen
-  ![sign up](./app_screens/home%20screen.jpeg)
+  <!-- ![Home](./app_screens/home%20screen.jpeg) -->
+  <img src="./app_screens/home%20screen.jpeg" alt="Image Alt Text" width="300" />
 
 - Income Screen
-  ![sign up](./app_screens/income%20screen.jpeg)
+  <!-- ![Income](./app_screens/income%20screen.jpeg) -->
+  <img src="./app_screens/income%20screen.jpeg" alt="Image Alt Text" width="300" />
 
 - Outcome Screen
-  ![sign up](./app_screens/outcome%20screen.jpeg)
+  <!-- ![Outcome](./app_screens/outcome%20screen.jpeg) -->
+  <img src="./app_screens/outcome%20screen.jpeg" alt="Image Alt Text" width="300" />
 
 - Profile Screen
-  ![sign up](./app_screens/profile%20screen.jpeg)
+  <!-- ![Profile](./app_screens/profile%20screen.jpeg) -->
+  <img src="./app_screens/profile%20screen.jpeg" alt="Image Alt Text" width="300" />
