@@ -6,10 +6,14 @@ import {Formik} from 'formik';
 import InputField from '../InputField';
 import ButtonField from '../ButtonField';
 
-const LoginForm = ({navigation}) => {
-  const LoginFormSchema = Yup.object().shape({
+const SignUpForm = ({navigation}) => {
+  const SignUpFormSchema = Yup.object().shape({
     email: Yup.string().email().required('An email is required'),
+    username: Yup.string().email().required('A Username is required'),
     password: Yup.string()
+      .required()
+      .min(6, 'Your password has to have at least 6 characters'),
+    confirm_password: Yup.string()
       .required()
       .min(6, 'Your password has to have at least 6 characters'),
   });
@@ -17,12 +21,17 @@ const LoginForm = ({navigation}) => {
   return (
     <View style={styles.wrapper}>
       <Formik
-        initialValues={{email: '', password: ''}}
+        initialValues={{
+          email: '',
+          username: '',
+          password: '',
+          confirm_password: '',
+        }}
         onSubmit={values => {
           console.log('post submitted', values);
-          navigation.navigate('Home');
+          //   navigation.goBack();
         }}
-        validationSchema={LoginFormSchema}
+        validationSchema={SignUpFormSchema}
         validateOnMount={true}>
         {({
           handleBlur,
@@ -43,11 +52,25 @@ const LoginForm = ({navigation}) => {
                 value={values?.email}
               />
               <InputField
+                placeholder="Username"
+                autoFocus={false}
+                onChangeText={handleChange('username')}
+                onBlur={handleBlur('username')}
+                value={values?.username}
+              />
+              <InputField
                 placeholder="Password"
                 autoFocus={false}
                 onChangeText={handleChange('password')}
                 onBlur={handleBlur('password')}
                 value={values?.password}
+              />
+              <InputField
+                placeholder="Confirm Password"
+                autoFocus={false}
+                onChangeText={handleChange('confirm_password')}
+                onBlur={handleBlur('confirm_password')}
+                value={values?.confirm_password}
               />
             </View>
 
@@ -81,20 +104,18 @@ const LoginForm = ({navigation}) => {
             <View
               style={styles.sub_container}
               id="new-account-or-forgot-password">
-              <TouchableOpacity onPress={() => navigation.push('SignUp')}>
-                <Text style={styles.sub_containerText}>Create New Account</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => navigation.push('ForgotPassword')}>
-                <Text style={styles.sub_containerText}>Forgot Password ?</Text>
+              <TouchableOpacity onPress={() => navigation.push('Login')}>
+                <Text style={styles.sub_containerText}>
+                  Already have an Account ?
+                </Text>
               </TouchableOpacity>
             </View>
 
-            <View style={{marginTop: 'auto', marginBottom: 100}}>
+            <View style={{marginTop: 'auto', marginBottom: 30}}>
               <ButtonField
-                accessibilityLabel={'sign in'}
+                accessibilityLabel={'Sign up'}
                 handleButtonPress={handleSubmit}
-                title={'Sign In'}
+                title={'Sign up'}
               />
             </View>
           </>
@@ -109,13 +130,11 @@ const styles = StyleSheet.create({
   InputFieldContainer: {
     padding: 10,
     paddingTop: 0,
-    marginBottom: 20,
   },
   inputField: isValid => ({
     borderRadius: 4,
     padding: 8,
     backgroundColor: '#FAFAFA',
-    marginBottom: 10,
     borderWidth: 1,
     borderColor: 'gray',
   }),
@@ -132,7 +151,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '45%',
-    marginBottom: 45,
+    marginBottom: 20,
   },
   SigupContainer: {
     flexDirection: 'row',
@@ -141,7 +160,7 @@ const styles = StyleSheet.create({
     marginTop: 45,
   },
   sub_container: {
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     flexDirection: 'row',
     marginBottom: 20,
     padding: 10,
@@ -166,4 +185,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginForm;
+export default SignUpForm;

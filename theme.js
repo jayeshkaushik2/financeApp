@@ -6,6 +6,7 @@ const theme = {
   gray: {
     main: '#ECECEC',
     main_dark: '#858585',
+    main_light: '#EEEEEE',
   },
   success: '#00CB76',
   fail: '#CB0000',

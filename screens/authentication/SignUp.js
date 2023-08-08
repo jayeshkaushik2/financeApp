@@ -1,12 +1,23 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {SafeAreaView, Text, View, StyleSheet} from 'react-native';
+import LogoDisplay from '../../components/LogoDisplay';
+import SignUpForm from '../../components/forms/SignUpForm';
 
-const SignUp = () => {
+const SignUp = ({navigation}) => {
   return (
-    <View>
-      <Text>SignUp</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <LogoDisplay />
+      <SignUpForm navigation={navigation} />
+    </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#ffffff',
+    width: '100%',
+  },
+});
 
 export default SignUp;

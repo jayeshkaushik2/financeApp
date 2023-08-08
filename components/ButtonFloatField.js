@@ -4,42 +4,53 @@ import Icon from 'react-native-vector-icons/AntDesign';
 
 const RightArrowIcon = <Icon name="arrowright" size={30} color="white" />;
 
-const ButtonField = ({
+const ButtonFloatField = ({
   handleButtonPress,
   title,
   accessibilityLabel,
   disabled = false,
+  width,
+  buttonType,
 }) => {
   return (
     <Pressable
       onPress={e => {
         handleButtonPress();
       }}
-      style={({pressed}) => [
-        {
-          backgroundColor: pressed ? '#003E6C' : '#005DA0',
-        },
-        styles.button,
-      ]}>
+      style={({pressed}) => [styles.button(width, buttonType, pressed)]}>
       {({pressed}) => <Text style={styles.buttonText}>{title}</Text>}
     </Pressable>
   );
 };
 
 const styles = StyleSheet.create({
-  button: {
-    width: '100%',
-    color: 'black',
-    height: 60,
+  button: (width, buttonType, pressed) => {
+    if (buttonType === 'normal') {
+      return {
+        backgroundColor: pressed ? '#003E6C' : '#005DA0',
+        borderRadius: 15,
+        width: width,
+        height: 50,
+        marginBottom: 10,
+      };
+    } else {
+      return {
+        backgroundColor: pressed ? '#AD0000' : '#CB0000',
+        borderRadius: 15,
+        width: width,
+        height: 50,
+        marginBottom: 10,
+      };
+    }
   },
   buttonText: {
     textAlign: 'center',
     color: 'white',
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: '500',
     marginTop: 'auto',
     marginBottom: 'auto',
   },
 });
 
-export default ButtonField;
+export default ButtonFloatField;
