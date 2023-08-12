@@ -6,15 +6,18 @@ import {
   TouchableOpacity,
   Button,
 } from 'react-native';
-import React from 'react';
+import React, {useContext} from 'react';
 import * as Yup from 'yup';
 import {Formik} from 'formik';
 // import * as Validator from 'email-validator';
 import InputField from '../InputField';
 import ButtonField from '../ButtonField';
 import ButtonFloatField from '../ButtonFloatField';
+import AuthCtx from '../../Utils/context/AuthCtx';
 
 const ProfileForm = ({navigation}) => {
+  const authCtx = useContext(AuthCtx);
+
   const ProfileFormSchema = Yup.object().shape({
     email: Yup.string().email().required('An email is required'),
   });
@@ -23,8 +26,8 @@ const ProfileForm = ({navigation}) => {
     <View style={styles.wrapper}>
       <Formik
         initialValues={{
-          username: 'Jayesh kaushik',
-          email: 'jayeshkaushik2@gmail.com',
+          username: authCtx.user?.username,
+          email: authCtx.user?.email,
         }}
         onSubmit={values => {
           console.log('post submitted', values);
@@ -72,7 +75,9 @@ const ProfileForm = ({navigation}) => {
               />
               <ButtonFloatField
                 accessibilityLabel={'Logout'}
-                handleButtonPress={() => navigation.navigate('Login')}
+                handleButtonPress={() => {
+                  authCtx.logout();
+                }}
                 title={'Logout'}
                 width="90%"
                 buttonType="error"

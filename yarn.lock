@@ -1538,6 +1538,13 @@
     "@nodelib/fs.scandir" "2.1.5"
     "fastq" "^1.6.0"
 
+"@react-native-async-storage/async-storage@^1.19.1":
+  "integrity" "sha512-5QXuGCtB+HL3VtKL2JN3+6t4qh8VXizK+aGDAv6Dqiq3MLrzgZHb4tjVgtEWMd8CcDtD/JqaAI1b6/EaYGtFIA=="
+  "resolved" "https://registry.npmjs.org/@react-native-async-storage/async-storage/-/async-storage-1.19.1.tgz"
+  "version" "1.19.1"
+  dependencies:
+    "merge-options" "^3.0.4"
+
 "@react-native-community/cli-clean@11.3.5":
   "integrity" "sha512-1+7BU962wKkIkHRp/uW3jYbQKKGtU7L+R3g59D8K6uLccuxJYUBJv18753ojMa6SD3SAq5Xh31bAre+YwVcOTA=="
   "resolved" "https://registry.npmjs.org/@react-native-community/cli-clean/-/cli-clean-11.3.5.tgz"
@@ -2968,6 +2975,11 @@
     "domelementtype" "^2.3.0"
     "domhandler" "^5.0.3"
 
+"dotenv@^16.3.1":
+  "integrity" "sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ=="
+  "resolved" "https://registry.npmjs.org/dotenv/-/dotenv-16.3.1.tgz"
+  "version" "16.3.1"
+
 "ee-first@1.1.1":
   "integrity" "sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow=="
   "resolved" "https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz"
@@ -3948,6 +3960,11 @@
   "resolved" "https://registry.npmjs.org/is-path-inside/-/is-path-inside-3.0.3.tgz"
   "version" "3.0.3"
 
+"is-plain-obj@^2.1.0":
+  "integrity" "sha512-YWnfyRwxL/+SsrWYfOpUtz5b3YD+nyfkHvjbcanzk8zgyO4ASD67uVMRt8k5bM4lLMDnXfriRhOpemw+NfT1eA=="
+  "resolved" "https://registry.npmjs.org/is-plain-obj/-/is-plain-obj-2.1.0.tgz"
+  "version" "2.1.0"
+
 "is-plain-object@^2.0.4":
   "integrity" "sha512-h5PpgXkWitc38BBMYawTYMWJHFZJVnBquFE57xFpjB8pJFiF6gZ+bU+WyI/yqXiFR5mdLsgYNaPe8uao6Uv9Og=="
   "resolved" "https://registry.npmjs.org/is-plain-object/-/is-plain-object-2.0.4.tgz"
@@ -4726,6 +4743,13 @@
   "integrity" "sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q=="
   "resolved" "https://registry.npmjs.org/memoize-one/-/memoize-one-5.2.1.tgz"
   "version" "5.2.1"
+
+"merge-options@^3.0.4":
+  "integrity" "sha512-2Sug1+knBjkaMsMgf1ctR1Ujx+Ayku4EdJN4Z+C2+JzoeF7A3OZ9KM2GY0CpQS51NR61LTurMJrRKPhSs3ZRTQ=="
+  "resolved" "https://registry.npmjs.org/merge-options/-/merge-options-3.0.4.tgz"
+  "version" "3.0.4"
+  dependencies:
+    "is-plain-obj" "^2.1.0"
 
 "merge-stream@^2.0.0":
   "integrity" "sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w=="
@@ -5611,6 +5635,13 @@
     "lodash" "^4.17.13"
     "paths-js" "^0.4.10"
     "point-in-polygon" "^1.0.1"
+
+"react-native-dotenv@^3.4.9":
+  "integrity" "sha512-dbyd+mcy7SUzxEgmt33TRf1FGcNe6swJhXmB0unKkI49F7+pidog9kPtjxMLTAfmKA8gcN2XHQSKltGfGbGCLQ=="
+  "resolved" "https://registry.npmjs.org/react-native-dotenv/-/react-native-dotenv-3.4.9.tgz"
+  "version" "3.4.9"
+  dependencies:
+    "dotenv" "^16.3.1"
 
 "react-native-element-dropdown@^2.9.0":
   "integrity" "sha512-2Y/bmoFPTdKOUXbYloEKpMTWYE2VHrvva/5tgEuHqAlfAtGGr3r/ob0L0YYH1am5N0n1PKo3+eLf0c79QUSzYw=="

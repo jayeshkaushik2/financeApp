@@ -1,12 +1,15 @@
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import React from 'react';
+import React, {useContext} from 'react';
 import * as Yup from 'yup';
 import {Formik} from 'formik';
 // import * as Validator from 'email-validator';
 import InputField from '../InputField';
 import ButtonField from '../ButtonField';
+import AuthCtx from '../../Utils/context/AuthCtx';
 
 const LoginForm = ({navigation}) => {
+  const authCtx = useContext(AuthCtx);
+
   const LoginFormSchema = Yup.object().shape({
     email: Yup.string().email().required('An email is required'),
     password: Yup.string()
@@ -19,8 +22,7 @@ const LoginForm = ({navigation}) => {
       <Formik
         initialValues={{email: '', password: ''}}
         onSubmit={values => {
-          console.log('post submitted', values);
-          navigation.navigate('Home');
+          authCtx.login(values);
         }}
         validationSchema={LoginFormSchema}
         validateOnMount={true}>

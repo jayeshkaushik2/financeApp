@@ -11,6 +11,7 @@ import Home from '../screens/Home';
 import Profile from '../screens/Profile';
 import Income from '../screens/Income';
 import Outcome from '../screens/Outcome';
+import AuthProivder from '../Utils/context/AuthProvider';
 
 // Import your screens/components
 
@@ -19,58 +20,60 @@ const Stack = createNativeStackNavigator();
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        {/* authentication pages starts */}
-        <Stack.Screen
-          name="Login"
-          component={Login}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="SignUp"
-          component={SignUp}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="ForgotPassword"
-          component={ForgotPassword}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="VerifyOtp"
-          component={VerifyOtp}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="NewPassword"
-          component={NewPassword}
-          options={{headerShown: false}}
-        />
-        {/* authentication pages ends */}
+      <AuthProivder>
+        <Stack.Navigator initialRouteName="Login">
+          {/* authentication pages starts */}
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="SignUp"
+            component={SignUp}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="ForgotPassword"
+            component={ForgotPassword}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="VerifyOtp"
+            component={VerifyOtp}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="NewPassword"
+            component={NewPassword}
+            options={{headerShown: false}}
+          />
+          {/* authentication pages ends */}
 
-        {/* authenticated pages starts */}
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="Income"
-          component={Income}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="Outcome"
-          component={Outcome}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="Profile"
-          component={Profile}
-          options={{headerShown: false}}
-        />
-        {/* authenticated pages ends */}
-      </Stack.Navigator>
+          {/* authenticated pages starts */}
+          <Stack.Screen
+            name="Home"
+            component={Home}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Income"
+            component={Income}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Outcome"
+            component={Outcome}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Profile"
+            component={Profile}
+            options={{headerShown: false}}
+          />
+          {/* authenticated pages ends */}
+        </Stack.Navigator>
+      </AuthProivder>
     </NavigationContainer>
   );
 };

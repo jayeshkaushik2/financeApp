@@ -1,11 +1,19 @@
 // AuthenticatedScreenWrapper.js
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import {View, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import BottomNavBar from '../components/BottomNavBar';
+import AuthCtx from './context/AuthCtx';
 
 const AuthenticatedScreenWrapper = ({children}) => {
   const navigation = useNavigation();
+  const authCtx = useContext(AuthCtx);
+
+  useEffect(() => {
+    if (!authCtx.user || !authCtx.tokens) {
+      navigation.navigate('Login');
+    }
+  }, []);
 
   return (
     <View style={styles.container}>
