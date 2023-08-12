@@ -1,15 +1,18 @@
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import React from 'react';
+import React, {useContext} from 'react';
 import * as Yup from 'yup';
 import {Formik} from 'formik';
 // import * as Validator from 'email-validator';
 import InputField from '../InputField';
 import ButtonField from '../ButtonField';
+import AuthCtx from '../../Utils/context/AuthCtx';
 
 const SignUpForm = ({navigation}) => {
+  const authCtx = useContext(AuthCtx);
+
   const SignUpFormSchema = Yup.object().shape({
     email: Yup.string().email().required('An email is required'),
-    username: Yup.string().email().required('A Username is required'),
+    username: Yup.string().required('A Username is required'),
     password: Yup.string()
       .required()
       .min(6, 'Your password has to have at least 6 characters'),
@@ -28,8 +31,7 @@ const SignUpForm = ({navigation}) => {
           confirm_password: '',
         }}
         onSubmit={values => {
-          console.log('post submitted', values);
-          //   navigation.goBack();
+          authCtx.signUp(values);
         }}
         validationSchema={SignUpFormSchema}
         validateOnMount={true}>

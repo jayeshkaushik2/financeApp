@@ -6,7 +6,6 @@ import {createApi} from '../apis';
 
 const AuthProivder = ({children}) => {
   const navigation = useNavigation();
-
   const [user, setUser] = useState(null);
   const [tokens, setTokens] = useState(null);
 
@@ -33,6 +32,7 @@ const AuthProivder = ({children}) => {
       setItemValue('tokens', resp.tokens);
       setUser(resp);
       setTokens(resp.tokens);
+      navigation.navigate('VerifyOtp');
       // redirect to verify otp page
     } else {
       console.log('Unable to signup');

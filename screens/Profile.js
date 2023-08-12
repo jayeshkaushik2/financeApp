@@ -41,7 +41,8 @@ const Profile = ({navigation}) => {
             />
           )}
           <Text style={{fontSize: 28, fontWeight: '500', color: 'white'}}>
-            {authCtx.user?.username}
+            {authCtx.user?.username}{' '}
+            {!authCtx.user?.is_verified && 'Your account not verified'}
           </Text>
         </View>
         <ProfileForm navigation={navigation} />
