@@ -45,8 +45,9 @@ const OtpField = ({
             ref={input => (inputRefs.current[index] = input)} // Store the reference of the input in the inputRefs array
             autoFocus={autoFocus && index === 0}
             placeholderTextColor="gray"
+            inputMode="numeric"
             autoCapitalize="none"
-            keyboardType={keyboardType}
+            // keyboardType={keyboardType}
             textContentType={textContentType}
             onChangeText={text => handleOTPChange(index, text)}
             onBlur={onBlur}

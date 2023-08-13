@@ -1,11 +1,9 @@
+import messages from './Messages';
+import {ShowNotification} from './Notification';
 import Constants from './constant';
 
 const API_URL =
-  'https://f1b4-2402-3a80-41f0-e008-39e4-2aea-9504-3b4d.ngrok-free.app'; //Constants.FINANCE_API_URL;
-
-function handleError(error) {
-  console.log('got error', error);
-}
+  'https://b2b3-2402-3a80-41e0-aedf-d9e0-a118-687f-2a1f.ngrok-free.app'; //Constants.FINANCE_API_URL;
 
 function get_formated_query_params(query_params) {
   let params = '?';
@@ -40,12 +38,11 @@ function get_api_response(method, headersType = 'default', data) {
   let api_response = {
     method: method,
   };
-  let headers = {};
-
   if (data) {
     api_response['body'] = JSON.stringify(data);
   }
 
+  let headers = {};
   if (headersType === 'default') {
     headers['Content-Type'] = 'application/json';
   } else if (headersType === 'media') {
@@ -65,11 +62,11 @@ export const getListApi = async (api_path, query_params = {}) => {
     const responseData = await response.json();
 
     if (!response.ok) {
-      handleError(responseData);
+      ShowNotification(responseData);
     }
     return responseData;
-  } catch (error) {
-    handleError(error);
+  } catch (catchedError) {
+    ShowNotification(null, messages.SERVER_ERROR, catchedError);
   }
 };
 
@@ -81,11 +78,11 @@ export const getDetailApi = async (api_path, query_params = {}, pk) => {
     const responseData = await response.json();
 
     if (!response.ok) {
-      handleError(responseData);
+      ShowNotification(responseData);
     }
     return responseData;
-  } catch (error) {
-    handleError(error);
+  } catch (catchedError) {
+    ShowNotification(null, messages.SERVER_ERROR, catchedError);
   }
 };
 
@@ -101,11 +98,11 @@ export const createApi = async (
     const response = await fetch(api_url, api_response);
     const responseData = await response.json();
     if (!response.ok) {
-      handleError(responseData);
+      ShowNotification(responseData);
     }
     return responseData;
-  } catch (error) {
-    handleError(error);
+  } catch (catchedError) {
+    ShowNotification(null, messages.SERVER_ERROR, catchedError);
   }
 };
 
@@ -117,10 +114,10 @@ export const deleteApi = async () => {
     const responseData = await response.json();
 
     if (!response.ok) {
-      handleError(responseData);
+      ShowNotification(responseData);
     }
     return responseData;
-  } catch (error) {
-    handleError(error);
+  } catch (catchedError) {
+    ShowNotification(null, messages.SERVER_ERROR, catchedError);
   }
 };

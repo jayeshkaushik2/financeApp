@@ -3,6 +3,8 @@ import {useState, useEffect} from 'react';
 import {getItemValue, setItemValue, removeItem} from '../Storage';
 import {useNavigation} from '@react-navigation/native';
 import {createApi} from '../apis';
+import {ShowNotification} from '../Notification';
+import messages from '../Messages';
 
 const AuthProivder = ({children}) => {
   const navigation = useNavigation();
@@ -11,16 +13,20 @@ const AuthProivder = ({children}) => {
 
   const login = async credentials => {
     const resp = await createApi('login', {}, credentials);
-    console.log('login data', resp && resp?.tokens);
     if (resp && resp?.tokens) {
       // setItem to storage and state
       setItemValue('user', resp);
       setItemValue('tokens', resp.tokens);
       setUser(resp);
       setTokens(resp.tokens);
-      navigation.navigate('Home');
+
+      if (!resp.is_verified) {
+        navigation.navigate('VerifyOtp');
+      } else {
+        navigation.navigate('Home');
+      }
     } else {
-      console.log('Unable to login');
+      ShowNotification(resp, messages.UNABLE_TO_LOGIN);
     }
   };
 
@@ -35,25 +41,32 @@ const AuthProivder = ({children}) => {
       navigation.navigate('VerifyOtp');
       // redirect to verify otp page
     } else {
-      console.log('Unable to signup');
+      ShowNotification(resp, messages.UNABLE_TO_SIGNUP);
     }
   };
 
   const forgotPassword = async credentials => {
     const resp = await createApi('forgot-password', {}, credentials);
     if (resp && resp?.success) {
+      ShowNotification(resp, 'Otp is sent to your registered email.');
       // throw the success message and redirect to verifyOtp
     } else {
-      console.log('Unable to forgot password');
+      ShowNotification(resp, messages.SERVER_ERROR);
     }
   };
 
-  const verifyOtp = async credentials => {
+  const verifyOtp = async (credentials, prevPage) => {
     const resp = await createApi('verify-otp', {}, credentials);
     if (resp && resp?.success) {
       // throw success message and redirect to home page
+      ShowNotification(resp, 'Your OTP is verified.');
+      if (prevPage === 'ForgotPassword') {
+        navigation.push('NewPassword');
+      } else {
+        navigation.push('Home');
+      }
     } else {
-      console.log('Unable to signup');
+      ShowNotification(resp, messages.UNABLE_TO_VERIF_OTP);
     }
   };
 
@@ -62,7 +75,7 @@ const AuthProivder = ({children}) => {
     if (resp && resp?.success) {
       // throw success message
     } else {
-      console.log('Unable to signup');
+      ShowNotification(resp, messages.UNABLE_TO_RESEND_OTP);
     }
   };
 
@@ -91,7 +104,6 @@ const AuthProivder = ({children}) => {
       setTokens(JSON.parse(stored_tokens));
 
       if (stored_user && stored_tokens !== null) {
-        console.log('user already logged in');
         navigation.navigate('Home');
       }
     }

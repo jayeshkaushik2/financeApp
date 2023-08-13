@@ -1,17 +1,19 @@
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import React from 'react';
+import React, {useContext} from 'react';
 import * as Yup from 'yup';
 import {Formik} from 'formik';
 // import * as Validator from 'otp-validator';
 import OtpField from '../OtpField';
 import ButtonField from '../ButtonField';
+import AuthCtx from '../../Utils/context/AuthCtx';
 
 const VerifyOtpForm = ({route, navigation}) => {
+  const authCtx = useContext(AuthCtx);
   const VerifyOtpFormSchema = Yup.object().shape({
     otp: Yup.string().min(5, '').max(5, '').required('An otp is required'),
   });
   // const {page} = route.params;
-  const page = 'ForgotPassword';
+  const prevPage = 'ForgotPassword';
   // console.log('page', page);
   return (
     <View style={styles.wrapper}>
@@ -19,11 +21,7 @@ const VerifyOtpForm = ({route, navigation}) => {
         initialValues={{otp: ''}}
         onSubmit={values => {
           console.log('post submitted', values);
-          {
-            page === 'ForgotPassword'
-              ? navigation.push('NewPassword')
-              : navigation.push('Home');
-          }
+          authCtx.verifyOtp(values, prevPage);
         }}
         validationSchema={VerifyOtpFormSchema}
         validateOnMount={true}>
@@ -45,7 +43,7 @@ const VerifyOtpForm = ({route, navigation}) => {
                   marginLeft: 20,
                   marginBottom: 25,
                 }}>
-                OTP is sent no your email xxshik@gmail.com
+                OTP is sent no your email {authCtx.user?.email}
               </Text>
               <OtpField
                 placeholder="Enter OTP"
