@@ -2,8 +2,7 @@ import messages from './Messages';
 import {ShowNotification} from './Notification';
 import Constants from './constant';
 
-const API_URL =
-  'https://b2b3-2402-3a80-41e0-aedf-d9e0-a118-687f-2a1f.ngrok-free.app'; //Constants.FINANCE_API_URL;
+const API_URL = 'https://jayeshkaushik2.pythonanywhere.com'; //Constants.FINANCE_API_URL;
 
 function get_formated_query_params(query_params) {
   let params = '?';

@@ -19,6 +19,12 @@ export function ShowNotification(
   customMsg = '',
   catchedError,
 ) {
+  console.log(
+    'show message ------->>>',
+    `response: ${response}`,
+    `customMsg: ${customMsg}`,
+    `catchedError: ${catchedError}`,
+  );
   if (response) {
     customMsg = getResponseError(response);
   }
